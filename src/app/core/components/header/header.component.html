@@ -1,0 +1,9 @@
+<header class="header">
+  <h1>Bem vindo {{ user?.firstName }} {{user?.lastName}}</h1>
+
+  <div class="container">
+    <app-card [balance]="user?.account?.balance" [title]="'Gasto total'"></app-card>
+    <app-card [balance]="user?.account?.balanceMonth" [title]="'Gasto Mensal'"></app-card>
+    <app-card [balance]="user?.account?.balanceWeek" [title]="'Gasto Semanal'"></app-card>
+  </div>
+</header>

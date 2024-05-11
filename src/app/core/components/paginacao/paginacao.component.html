@@ -1,0 +1,5 @@
+<div>
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{currentPage}} de {{totalPage}}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPage">Próximo</button>
+</div>

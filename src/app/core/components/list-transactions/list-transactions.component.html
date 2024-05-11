@@ -1,0 +1,26 @@
+<table *ngIf="transactionList?.content && transactionList?.content!.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Amount</th>
+      <th>Transaction Date</th>
+      <th>Paid</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let transaction of transactionList?.content">
+      <td>{{ transaction.id }}</td>
+      <td>{{ transaction.amount | currency: 'BRL' }}</td>
+      <td>{{ transaction.transactionDate | date: 'dd/MM/yyyy hh:mm' }}</td>
+      <td>{{ transaction.paid }}</td>
+    </tr>
+  </tbody>
+
+  <app-paginacao [totalElements]="transactionList!.totalElements" [itemsPerPage]="transactionList!.size" [totalPage]="transactionList!.totalPages"
+  (pageChange)="onPageChange($event)"></app-paginacao>
+</table>
+
+<div class="message-emply-table" *ngIf="!transactionList?.content || transactionList?.content!.length === 0">
+  <p>No transactions available.</p>
+</div>
