@@ -23,6 +23,8 @@ export class LoginComponent {
       }
     })
 
-    this.errorMessage = 'Invalid username or password';
+    if (localStorage.getItem('token-cardeneta') == null){
+      this.errorMessage = 'Invalid username or password';
+    }
   }
 }

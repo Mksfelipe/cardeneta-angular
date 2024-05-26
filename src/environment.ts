@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://cardeneta-web-production.up.railway.app/api' // Exemplo de URL da API para o ambiente de desenvolvimento
+    apiUrl: 'http://127.0.0.1:9090/api' // Exemplo de URL da API para o ambiente de desenvolvimento
 };
 
 
